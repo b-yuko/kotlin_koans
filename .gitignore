@@ -1,0 +1,28 @@
+# Kotlinソースコード(.kt)以外を無視
+*.*
+
+# .ktファイルを除外しない
+!*.kt
+
+# Gradle関連のディレクトリ・ファイルを無視
+.gradle/
+build/
+.gradle-wrapper/
+gradlew
+gradlew.bat
+.gradle/**
+
+# IDE関連のファイルを無視（IntelliJ, Eclipseなど）
+.idea/
+*.iml
+
+# テストファイルやテストディレクトリを無視
+**/test/
+**/tests/
+
+# その他の不要なファイルを無視
+*.log
+*.bak
+*.tmp
+*.swp
+*.out
