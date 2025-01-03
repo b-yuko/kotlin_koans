@@ -28,14 +28,13 @@ public void sendMessageToClient(
 fun sendMessageToClient(
         client: Client?, message: String?, mailer: Mailer
 ) {
-    client ?: return
-    val personalInfo = client.personalInfo ?: return
-    val email = personalInfo.email ?: return
-    if(message.isNullOrBlank()) return
-    mailer.sendMessage(email, message)
+    val email = client?.personalInfo?.email
+    if(!email.isNullOrBlank() && !message.isNullOrBlank()) {
+        mailer.sendMessage(email, message)
+    }
+
 }
 
-// 一応テストは pass するけど、なんか違う気がする・・・。
 
 class Client(val personalInfo: PersonalInfo?)
 class PersonalInfo(val email: String?)
